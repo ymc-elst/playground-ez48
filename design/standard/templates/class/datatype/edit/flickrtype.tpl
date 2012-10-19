@@ -1,0 +1,1 @@
+Flickrtype class/datatype/edit/flickrtype

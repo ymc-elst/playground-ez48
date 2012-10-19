@@ -20,7 +20,14 @@ $flickr_photos_info = array();
 
 //returns xml
 $flickr_photoset_id = "72157630534229062"; //TODO must come from DB
+$flickr_group_id = "1019652@N22"; //TODO must come from DB
+//GROUPS Pool Photos
+//http://www.flickr.com/services/rest/?method=flickr.groups.pools.getPhotos&api_key=55446c1c733563d88cf3006659a0babd&group_id=1019652@N22
+//PHOTOSETS Photos
+//http://www.flickr.com/services/rest/?method=flickr.photosets.getPhotos&api_key=55446c1c733563d88cf3006659a0babd&photoset_id=72157630534229062
+
 $flickr_xml_url = 'http://www.flickr.com/services/rest/?method=flickr.photosets.getPhotos&api_key='.$flickr_api_key.'&photoset_id='.$flickr_photoset_id;
+//$flickr_xml_url ='http://www.flickr.com/services/rest/?method=flickr.groups.pools.getPhotos&api_key='.$flickr_api_key.'&group_id='.$flickr_group_id;
 $flickr_xml = simplexml_load_file($flickr_xml_url);
 $flickr_photoset_imgs = $flickr_xml->children();
 $status_attr = $flickr_xml->attributes();
@@ -61,12 +68,15 @@ foreach($flickr_photoset_imgs->children() as $photo)
       $return_photo['secret'] = (String)$attr['secret'][0];
       $return_photo['server'] = (String)$attr['server'][0];
       $return_photo['farm'] = (String)$attr['farm'][0];
+
+      if($attr['ownername'][0] != null)
+        $return_photo['ownername'] = (String)$attr['ownername'][0];
+      else
+        $return_photo['ownername'] = $flickr_photos_info['ownername'];
       $return_photo['url_big'] =  "http://farm".$photo_farm.".staticflickr.com/".$photo_server."/".$photo_id."_".$photo_secret."_z.jpg";
       $return_photo['url_square'] =  "http://farm".$photo_farm.".staticflickr.com/".$photo_server."/".$photo_id."_".$photo_secret."_s.jpg";
 
       $flickr_photos[] = $return_photo;
-     // echo("<img src=\"".$photo_url_square."\">");
-     // echo("<img src=\"".$photo_url_big."\"><br>");
 
   }
 $tpl = eZTemplate::factory();

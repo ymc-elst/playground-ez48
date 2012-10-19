@@ -1,4 +1,4 @@
-{* list.tpl – Template for Modulview .../flickr/list/ParamOne/ParamTwo
+{* list.tpl â€“ Template for Modulview .../flickr/list/ParamOne/ParamTwo
 Check if the variable $data_array exists
 - yes: show data as list
 - no: show message
@@ -7,7 +7,7 @@ Check if the variable $data_array exists
 {if is_set($photos_array)}
     <ul class="flickr_photos">
     {foreach $photos_array as $photo}
-        <li><a href="{$photo['url_big']}" target="_blank"><img src="{$photo['url_square']}" title="{$photo['title']}"></a></li>
+        <li><a href="{$photo['url_big']}" target="_blank"><img src="{$photo['url_square']}" title="{$photo['title']}{if $photo['ownername']} by {$photo['ownername']}{/if}"></a></li>
     {/foreach}
     </ul>
 {/if}

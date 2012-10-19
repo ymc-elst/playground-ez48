@@ -1,0 +1,1 @@
+Flickrtype content/datatype/view/flickrtype
