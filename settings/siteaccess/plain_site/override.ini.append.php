@@ -38,6 +38,24 @@ MatchFile=edit/user.tpl
 Subdir=templates
 Match[class_identifier]=user
 
+[flickrtype_full]
+Source=node/view/full.tpl
+MatchFile=full/flickrtype.tpl
+Subdir=templates
+Match[class_identifier]=flickrtype
+
+[flickrtype_line]
+Source=node/view/line.tpl
+MatchFile=line/flickrtype.tpl
+Subdir=templates
+Match[class_identifier]=article
+
+[flickrtype_listitem]
+Source=node/view/listitem.tpl
+MatchFile=listitem/flickrtype.tpl
+Subdir=templates
+Match[class_identifier]=flickrtype
+
 [article_full]
 Source=node/view/full.tpl
 MatchFile=full/article.tpl

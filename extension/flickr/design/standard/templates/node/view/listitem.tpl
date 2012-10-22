@@ -1,0 +1,1 @@
+Flickr listitem template flickr/design/standard/templates/node/listitem.tpl

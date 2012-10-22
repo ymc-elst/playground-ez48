@@ -1,4 +1,5 @@
 <?php /* #?ini charset="utf-8"?
+
 [TemplateSettings]
 #Debug=enabled
 #ShowXHTMLCode=disabled
@@ -27,28 +28,29 @@ Debug=inline
 #ScriptDebugOutput=enabled
 
 [ExtensionSettings]
-ActiveExtensions[]
-ActiveExtensions[]=ezmultiupload
-ActiveExtensions[]=eztags
-ActiveExtensions[]=ezautosave
-ActiveExtensions[]=ezjscore
-ActiveExtensions[]=ezie
-ActiveExtensions[]=ezoe
-ActiveExtensions[]=ezodf
-ActiveExtensions[]=ezprestapiprovider
 ActiveExtensions[]=flickr
+ActiveExtensions[]=ezautosave
+ActiveExtensions[]=ezcomments
+ActiveExtensions[]=ezfind
+ActiveExtensions[]=ezformtoken
+ActiveExtensions[]=ezie
+ActiveExtensions[]=ezjscore
+ActiveExtensions[]=ezmultiupload
+ActiveExtensions[]=ezodf
+ActiveExtensions[]=ezoe
+ActiveExtensions[]=ezprestapiprovider
+ActiveExtensions[]=ezscriptmonitor
+ActiveExtensions[]=eztags
 
 [Session]
 SessionNameHandler=custom
 
 [SiteSettings]
 DefaultAccess=plain_site
-SiteList[]
 SiteList[]=plain_site
 
 [SiteAccessSettings]
 CheckValidity=false
-AvailableSiteAccessList[]
 AvailableSiteAccessList[]=plain_site
 AvailableSiteAccessList[]=plain_site_admin
 MatchOrder=uri
@@ -61,7 +63,10 @@ PolicyOmitList[]=flickr/list
 DesignLocationCache=enabled
 
 [MailSettings]
-Transport=sendmail
+Transport=SMTP
+TransportServer=localhost
+TransportUser=admin
+TransportPassword=1234
 AdminEmail=elena.steingrad@ymc.ch
 EmailSender=
 */ ?>

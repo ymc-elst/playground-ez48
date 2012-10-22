@@ -1,0 +1,1 @@
+Flickr full template flickr/design/standard/templates/node/full.tpl
